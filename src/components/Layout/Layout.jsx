@@ -2,6 +2,33 @@ import React from 'react'
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 
+const links = [
+    {
+        id: 1,
+        name: 'Home',
+        path: '/',
+        component: 'Home',
+    },
+    {
+        id: 2,
+        name: 'About',
+        path: '/about',
+        component: 'About',
+    },
+    {
+        id: 3,
+        name: 'Projects',
+        path: '/projects',
+        component: 'Projects',
+    },
+    {
+        id: 4,
+        name: 'Contact',
+        path: '/contact',
+        component: 'Contact',
+    },
+]
+
 const socials = [
     {
         id: 1,
@@ -23,7 +50,7 @@ const socials = [
 const Layout = ({ children }) => {
     return (
         <>
-            <Navbar />
+            <Navbar links={links} />
             <div className="flex flex-1 flex-col">{children}</div>
             <Footer socials={socials} />
         </>
