@@ -5,19 +5,22 @@ import { useClickOutsideListener } from '../../../hooks'
 
 const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
     const [isToggled, setToggled] = useState(false)
-    const navbarNavRef = useRef(null)
+    const navbarRef = useRef(null)
 
     const handleToggle = () => {
         setToggled((prev) => !prev)
     }
 
-    useClickOutsideListener(navbarNavRef, () => {
+    useClickOutsideListener(navbarRef, () => {
         setToggled(false)
     })
 
     return (
         <>
-            <div className="fixed inset-x-0 top-0 z-[9999] flex h-14 w-full items-center border-b border-slate-800/20 bg-white p-3 transition-all duration-300 sm:h-16 sm:px-4 sm:py-3">
+            <header
+                className="fixed inset-x-0 top-0 z-[9999] flex h-14 w-full items-center border-b border-slate-800/20 bg-white p-3 transition-all duration-300  sm:px-4 sm:py-3"
+                ref={navbarRef}
+            >
                 <div className="text-xl font-medium text-slate-800">
                     {logoUrl && <img src={logoUrl} alt={brandName} />}
                     {!logoOnly && brandName && <>{brandName}</>}
@@ -37,7 +40,6 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                     className={`fixed inset-0 z-[9999] flex h-screen w-full flex-col items-center justify-center bg-slate-800/70 backdrop-blur-sm transition-all duration-300 ease-in-out lg:relative lg:inset-auto lg:ml-auto lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent${
                         isToggled ? ' translate-x-0' : ' translate-x-full'
                     }`}
-                    ref={navbarNavRef}
                 >
                     <ul className="flex flex-col items-center gap-4 lg:flex-row">
                         {links.map((link) => (
@@ -49,7 +51,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                         ))}
                     </ul>
                 </nav>
-            </div>
+            </header>
         </>
     )
 }
