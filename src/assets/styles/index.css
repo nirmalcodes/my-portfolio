@@ -1,6 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+    font-family: 'Roboto', sans-serif;
+
+    --scrollbar-size: 0.75rem;
+    --scrollbar-thumb-radius: 0rem;
+    --scrollbar-thumb-color: rgba(173, 173, 173, 0.85);
+    --scrollbar-thumb-hover-color: rgba(173, 173, 173, 1);
+    --scrollbar-track-color: transparent;
+}
+
+/* styles for scrollbar */
+::-webkit-scrollbar {
+    width: var(--scrollbar-size);
+    height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-track {
+    background: var(--scrollbar-track-color);
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: var(--scrollbar-thumb-radius);
+    background: var(--scrollbar-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--scrollbar-thumb-hover-color);
+}
 
 @layer components {
     .nav-link {
