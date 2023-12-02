@@ -36,12 +36,12 @@ const Footer = ({ name, socials }) => {
 
     return (
         <>
-            <div className="mt-auto flex items-center bg-slate-800 p-3 sm:px-4 sm:py-3">
-                <p className="font-medium text-slate-500">
+            <div className="mt-auto flex flex-wrap items-center gap-3 bg-slate-900 p-3 sm:px-4 sm:py-3">
+                <p className="mx-auto text-sm font-medium text-slate-500 md:m-0 md:text-base">
                     ©{DateYear} {name}. All rights reserved.
                 </p>
                 {socials.length > 0 && (
-                    <ul className="ml-auto flex items-center gap-2">
+                    <ul className="mx-auto flex items-center gap-2 md:m-0 md:ml-auto">
                         {socials.map((social) => (
                             <li key={social.name} title={social.name}>
                                 <a
