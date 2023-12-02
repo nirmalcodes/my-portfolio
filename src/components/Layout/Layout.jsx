@@ -12,18 +12,12 @@ const links = [
     },
     {
         id: 2,
-        name: 'About',
-        path: '/about',
-        component: 'About',
-    },
-    {
-        id: 3,
         name: 'Projects',
         path: '/projects',
         component: 'Projects',
     },
     {
-        id: 4,
+        id: 3,
         name: 'Contact',
         path: '/contact',
         component: 'Contact',
@@ -51,7 +45,7 @@ const socials = [
 const Layout = ({ children }) => {
     return (
         <>
-            <Navbar links={links} />
+            <Navbar brandName={'Nirmal'} links={links} />
             <div className="flex flex-1 flex-col">
                 {/* <NavbarSpacer /> */}
                 {children}
