@@ -1,48 +1,107 @@
-import React, { useRef, useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { FaBars, FaX } from 'react-icons/fa6'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useClickOutsideListener } from '../../../hooks'
 
 const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
-    const [isToggled, setToggled] = useState(false)
     const navbarRef = useRef(null)
+    const [isToggled, setIsToggled] = useState(false)
+    const [activeLink, setActiveLink] = useState('hero')
+    const [isScrolled, setIsScrolled] = useState(false)
 
-    const handleToggle = () => {
-        setToggled((prev) => !prev)
+    // function to scroll to the section
+    const scrollToSection = (sectionId) => {
+        const element = document.getElementById(sectionId)
+        if (element) {
+            const mTop = 0
+            const scrollY =
+                element.getBoundingClientRect().top + window.scrollY - mTop
+            window.scrollTo({ top: scrollY, behavior: 'smooth' })
+        }
     }
 
+    // function to detect active section
+    const detectActiveSection = () => {
+        for (let i = links.length - 1; i >= 0; i--) {
+            const section = document.getElementById(links[i].id)
+            if (section) {
+                const rect = section.getBoundingClientRect()
+                if (rect.top <= 120 && rect.bottom >= 120) {
+                    setActiveLink(links[i].id)
+                    break
+                }
+            }
+        }
+    }
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > 300) {
+                setIsScrolled(true)
+            } else {
+                setIsScrolled(false)
+            }
+            detectActiveSection()
+        }
+
+        window.addEventListener('scroll', handleScroll)
+
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
+    // function to handle navbar toggle
+    const handleToggle = () => {
+        setIsToggled((prev) => !prev)
+    }
+
+    // custom hook to listen outside click
     useClickOutsideListener(navbarRef, () => {
-        setToggled(false)
+        setIsToggled(false)
     })
 
     return (
         <>
             <header
-                className="fixed inset-x-0 top-0 z-[9999] flex h-14 w-full items-center bg-slate-800 p-3 transition-all duration-300  sm:px-4 sm:py-3"
+                className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-700 shadow-md transition-all duration-300 ease-in-out lg:px-8"
                 ref={navbarRef}
             >
-                <div className="text-xl font-medium text-[#fefefe]">
-                    {logoUrl && <img src={logoUrl} alt={brandName} />}
+                <div className="text-xl font-semibold">
+                    {logoUrl && (
+                        <img src={logoUrl} alt={brandName} loading="eager" />
+                    )}
                     {!logoOnly && brandName && <>{brandName}</>}
                 </div>
                 <button
                     type="button"
                     onClick={handleToggle}
-                    className={`z-[99999] ml-auto flex items-center justify-center rounded-full border border-slate-800/10 bg-indigo-500 p-2 text-[#fefefe] transition-all duration-0 lg:hidden`}
+                    className="z-[99999] ml-auto flex items-center justify-center rounded-full p-2 transition-all duration-300 ease-in-out lg:hidden"
                 >
                     {isToggled ? <FaX /> : <FaBars />}
                 </button>
                 <nav
-                    className={`fixed inset-0 z-[9999] flex h-screen w-full flex-col items-center justify-center bg-slate-800/75 backdrop-blur-md transition-all duration-300 ease-in-out lg:relative lg:inset-auto lg:ml-auto lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent${
+                    className={`fixed inset-0 z-[9999] ml-auto flex h-screen w-full items-center justify-center bg-white p-4 shadow-md backdrop-blur-lg transition-all duration-300 ease-in-out lg:relative lg:inset-auto lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent lg:p-0 lg:shadow-none${
                         isToggled ? ' translate-x-0' : ' translate-x-full'
                     }`}
                 >
-                    <ul className="flex flex-col items-center gap-4 lg:flex-row">
-                        {links.map((link) => (
-                            <li key={link?.name}>
-                                <NavLink to={link?.path} className="nav-link">
+                    <ul className="flex flex-col items-center gap-8 lg:flex-row lg:gap-3">
+                        {links?.map((link) => (
+                            <li
+                                key={link?.id}
+                                onClick={() => {
+                                    scrollToSection(link.id)
+                                    setIsToggled(false)
+                                }}
+                            >
+                                <Link
+                                    to={`/`}
+                                    className={`nav-link ${
+                                        activeLink === link.id ? 'active' : null
+                                    }`}
+                                >
                                     {link?.name}
-                                </NavLink>
+                                </Link>
                             </li>
                         ))}
                     </ul>
