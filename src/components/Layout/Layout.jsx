@@ -3,24 +3,22 @@ import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
 import NavbarSpacer from '../NavbarSpacer/NavbarSpacer'
 
-const links = [
+const sections = [
     {
-        id: 1,
+        id: 'hero',
         name: 'Home',
-        path: '/',
-        component: 'Home',
     },
     {
-        id: 2,
+        id: 'about',
+        name: 'About',
+    },
+    {
+        id: 'projects',
         name: 'Projects',
-        path: '/projects',
-        component: 'Projects',
     },
     {
-        id: 3,
+        id: 'contact',
         name: 'Contact',
-        path: '/contact',
-        component: 'Contact',
     },
 ]
 
@@ -45,12 +43,12 @@ const socials = [
 const Layout = ({ children }) => {
     return (
         <>
-            <Navbar brandName={'Nirmal'} links={links} />
+            <Navbar brandName={'Nirmal'} links={sections} />
             <div className="flex flex-1 flex-col">
                 {/* <NavbarSpacer /> */}
                 {children}
             </div>
-            <Footer socials={socials} />
+            {/* <Footer socials={socials} /> */}
         </>
     )
 }
