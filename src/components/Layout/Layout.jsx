@@ -1,7 +1,6 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
-import NavbarSpacer from '../NavbarSpacer/NavbarSpacer'
 
 const sections = [
     {
@@ -44,10 +43,7 @@ const Layout = ({ children }) => {
     return (
         <>
             <Navbar brandName={'Nirmal'} links={sections} />
-            <div className="flex flex-1 flex-col">
-                {/* <NavbarSpacer /> */}
-                {children}
-            </div>
+            <div className="flex flex-1 flex-col">{children}</div>
             {/* <Footer socials={socials} /> */}
         </>
     )
