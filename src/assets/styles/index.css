@@ -35,9 +35,9 @@
 
 @layer components {
     .nav-link {
-        @apply relative text-3xl font-medium tracking-wide text-slate-700 opacity-[0.85] transition-all duration-300 ease-in-out after:absolute after:-bottom-1 after:left-0 after:block after:h-[3px] after:w-0 after:bg-slate-700 after:duration-300 hover:tracking-wider hover:opacity-100 hover:after:w-full lg:text-lg lg:after:hidden lg:hover:font-semibold;
+        @apply relative text-3xl font-medium tracking-wide text-slate-700 opacity-[0.85] transition-all duration-300 ease-in-out after:absolute after:-bottom-1 after:left-0 after:block after:h-[3px] after:w-0 after:bg-slate-700 after:duration-300 hover:tracking-wider hover:opacity-100 hover:after:w-full lg:text-lg lg:after:hidden;
     }
     .nav-link.active {
-        @apply font-semibold opacity-100 after:w-full;
+        @apply opacity-100 after:w-full;
     }
 }
