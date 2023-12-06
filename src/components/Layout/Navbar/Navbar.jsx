@@ -64,7 +64,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
     return (
         <>
             <header
-                className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-700 shadow-md transition-all duration-300 ease-in-out lg:px-8"
+                className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-800 shadow-md transition-all duration-300 ease-in-out lg:px-8"
                 ref={navbarRef}
             >
                 <div className="text-xl font-semibold">
