@@ -42,10 +42,10 @@
     }
 
     .section {
-        @apply flex min-h-screen flex-col items-center justify-center px-4 py-20 even:bg-white lg:py-4;
+        @apply relative min-h-screen px-4 even:bg-white;
     }
 
     .container {
-        @apply mx-auto w-full md:w-[90%] lg:w-[80%];
+        @apply relative mx-auto w-full md:w-[90%] lg:w-[80%];
     }
 }
