@@ -15,11 +15,14 @@ const techStack = [
 const HeroContainer = () => {
     return (
         <>
-            <section className="section" id={'hero'}>
+            <section
+                className="section flex flex-col items-center justify-center py-20 lg:py-4"
+                id={'hero'}
+            >
                 <div className="container">
                     <div className="mb-8 flex w-full flex-row flex-wrap-reverse items-center">
                         <div className="flex w-full flex-col text-slate-800 md:w-[50%] lg:pr-10">
-                            <h3 className="mb-4 text-center text-5xl font-bold md:text-left md:text-6xl">
+                            <h3 className="mb-4 text-center text-[64px] font-bold leading-none md:text-left md:text-6xl">
                                 Front-End Developer
                             </h3>
                             <p className="text-center text-xl font-medium text-slate-600 md:text-left">
