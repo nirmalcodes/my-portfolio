@@ -3,7 +3,9 @@ import React from 'react'
 const ProjectsContainer = () => {
     return (
         <>
-            <div>ProjectsContainer</div>
+            <section className="section" id={'projects'}>
+                <div className="container">projects</div>
+            </section>
         </>
     )
 }
