@@ -39,7 +39,7 @@ const ProjectCard = ({ projectData }) => {
                     </span>
 
                     {/* project description */}
-                    <p className="mb-3 font-medium">
+                    <p className="mb-3 font-medium text-slate-800">
                         {description ? description : 'Description'}
                     </p>
 
