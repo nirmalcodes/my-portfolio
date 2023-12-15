@@ -18,23 +18,13 @@ const ProjectsContainer = () => {
                     <h5 className="mb-6 text-lg font-bold text-indigo-500">
                         PORTFOLIO
                     </h5>
-                    <div
-                        className=" grid-cols-1 place-items-center gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
-                        hidden
-                    >
-                        {projects?.map((project, i) => (
-                            <div
-                                key={`card${i}`}
-                                className="aspect-square w-full max-w-[320px] rounded-md bg-white p-4 shadow-md"
-                            >
-                                {project}
-                            </div>
-                        ))}
-                    </div>
 
                     <div className="">
                         {projects?.map((project, i) => (
-                            <div className="mb-4 flex flex-row flex-wrap  gap-x-8 gap-y-2 rounded-[8px] bg-white p-3 shadow-md md:p-4 md:even:flex-row-reverse">
+                            <div
+                                className="mb-4 flex flex-row flex-wrap  gap-x-8 gap-y-2 rounded-[8px] bg-white p-3 shadow-md md:p-4 md:even:flex-row-reverse"
+                                key={`card${i}`}
+                            >
                                 {/* project previwe image */}
                                 <div className="w-full overflow-hidden rounded-[6px] sm:max-h-[360px] md:max-h-none md:w-[320px] lg:w-[360px] xl:max-h-[360px] xl:w-1/2">
                                     <img
