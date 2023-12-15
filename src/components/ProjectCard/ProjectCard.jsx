@@ -28,7 +28,7 @@ const ProjectCard = ({ projectData }) => {
                 </div>
 
                 {/* project details */}
-                <div className="flex min-h-full flex-1 flex-col bg-blue-200/0 py-4 lg:pr-5 xl:pr-[200px]">
+                <div className="flex min-h-full flex-1 flex-col bg-blue-200/0 py-4">
                     {/* project title */}
                     <h5 className="text-lg font-bold text-slate-800">
                         {title ? title : 'Title'}
