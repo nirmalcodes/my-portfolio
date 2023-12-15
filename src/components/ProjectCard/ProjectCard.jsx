@@ -18,7 +18,7 @@ const ProjectCard = ({ projectData }) => {
             <div className="mb-4 flex flex-row flex-wrap  gap-x-8 gap-y-2 rounded-[8px] bg-white p-3 shadow-md md:p-4 md:even:flex-row-reverse">
                 {/* project previwe image */}
                 <div className="relative flex max-h-[320px] w-full flex-col overflow-hidden rounded-[6px] md:max-h-none md:w-[320px] lg:w-[360px] xl:max-h-[360px] xl:w-1/2">
-                    <div className="absolute inset-0 z-0 min-h-[180px] flex-1 animate-pulse bg-slate-200" />
+                    <div className="absolute inset-0 z-0 min-h-[180px] flex-1 animate-pulse bg-slate-300/80" />
                     <img
                         // hidden
                         src={imgURL}
