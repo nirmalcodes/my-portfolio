@@ -17,7 +17,7 @@ const ProjectCard = ({ projectData }) => {
         <>
             <div className="mb-4 flex flex-row flex-wrap  gap-x-8 gap-y-2 rounded-[8px] bg-white p-3 shadow-md md:p-4 md:even:flex-row-reverse">
                 {/* project previwe image */}
-                <div className="w-full overflow-hidden rounded-[6px] sm:max-h-[360px] md:max-h-none md:w-[320px] lg:w-[360px] xl:max-h-[360px] xl:w-1/2">
+                <div className="max-h-[320px] w-full overflow-hidden rounded-[6px] md:max-h-none md:w-[320px] lg:w-[360px] xl:max-h-[360px] xl:w-1/2">
                     <img
                         src={imgURL}
                         alt={title}
@@ -61,35 +61,35 @@ const ProjectCard = ({ projectData }) => {
                     )}
 
                     {/* project buttons */}
-                    {demoLink ||
-                        (githubLink && (
-                            <ul className="flex items-center gap-5">
-                                {demoLink && (
-                                    <li>
-                                        <Link
-                                            to={demoLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
-                                        >
-                                            <FaLink className="mr-2" /> Demo
-                                        </Link>
-                                    </li>
-                                )}
-                                {githubLink && (
-                                    <li>
-                                        <Link
-                                            to={githubLink}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
-                                        >
-                                            <FaGithub className="mr-2" /> Code
-                                        </Link>
-                                    </li>
-                                )}
-                            </ul>
-                        ))}
+                    <ul className="flex items-center gap-5">
+                        {/* demo */}
+                        {demoLink && (
+                            <li>
+                                <Link
+                                    to={demoLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
+                                >
+                                    <FaLink className="mr-2" /> Demo
+                                </Link>
+                            </li>
+                        )}
+
+                        {/* github */}
+                        {githubLink && (
+                            <li>
+                                <Link
+                                    to={githubLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
+                                >
+                                    <FaGithub className="mr-2" /> Code
+                                </Link>
+                            </li>
+                        )}
+                    </ul>
                 </div>
             </div>
         </>
