@@ -1,3 +1,2 @@
-import Layout from './Layout/Layout'
-
-export { Layout }
+export { default as Layout } from './Layout/Layout'
+export { default as ProjectCard } from './ProjectCard/ProjectCard'
