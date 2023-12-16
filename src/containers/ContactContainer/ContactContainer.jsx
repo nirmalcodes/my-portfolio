@@ -72,7 +72,10 @@ const ContactContainer = () => {
                             {contacts.map((contact) => {
                                 if (contact.type == 'normal') {
                                     return (
-                                        <li className="transition-all duration-300 ease-in-out hover:-rotate-6">
+                                        <li
+                                            className="transition-all duration-300 ease-in-out hover:-rotate-6"
+                                            key={contact.name}
+                                        >
                                             <Link to={contact.url}>
                                                 {iconFinder(contact.name)}
                                             </Link>
@@ -81,7 +84,10 @@ const ContactContainer = () => {
                                 }
                                 if (contact.type == 'new') {
                                     return (
-                                        <li className="transition-all duration-300 ease-in-out hover:-rotate-6">
+                                        <li
+                                            className="transition-all duration-300 ease-in-out hover:-rotate-6"
+                                            key={contact.name}
+                                        >
                                             <Link
                                                 to={contact.url}
                                                 target="_blank"
