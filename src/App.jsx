@@ -6,7 +6,7 @@ import { Home } from './pages'
 
 const App = () => {
     return (
-        <div className="relative flex min-h-screen flex-col bg-[#f1f1f1]">
+        <div className="relative flex min-h-screen flex-col overflow-hidden bg-[#f1f1f1]">
             <Suspense>
                 <ErrorBoundary fallback={<div>Something went wrong</div>}>
                     <Layout>
