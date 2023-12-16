@@ -43,11 +43,11 @@ const ProjectsContainer = () => {
                         PORTFOLIO
                     </h5>
 
-                    <div className="">
-                        {projects?.map((project, index) => (
+                    <div className="flex flex-col gap-8 lg:gap-12">
+                        {projects?.map((project) => (
                             <ProjectCard
                                 projectData={project}
-                                key={`project-${index}`}
+                                key={project.title}
                             />
                         ))}
                     </div>
