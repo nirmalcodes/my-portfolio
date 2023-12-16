@@ -1,9 +1,9 @@
 import React from 'react'
-import { images } from '../../utils/constants'
 import {
-    AboutContainer,
     HeroContainer,
+    AboutContainer,
     ProjectsContainer,
+    ContactContainer,
 } from '../../containers'
 
 const Home = () => {
@@ -13,10 +13,7 @@ const Home = () => {
                 <HeroContainer />
                 <AboutContainer />
                 <ProjectsContainer />
-
-                <section className="section" id={'contact'}>
-                    <div className="container">contact</div>
-                </section>
+                <ContactContainer />
             </div>
         </>
     )
