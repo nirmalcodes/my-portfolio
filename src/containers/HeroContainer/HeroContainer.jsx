@@ -21,6 +21,7 @@ const HeroContainer = () => {
             >
                 <div className="container">
                     <div className="mb-8 flex w-full flex-row flex-wrap-reverse items-center">
+                        {/* details */}
                         <div className="flex w-full flex-col text-slate-800 md:w-[50%] lg:pr-10">
                             <h3 className="mb-4 text-center text-[64px] font-bold leading-none md:text-left md:text-6xl">
                                 Front-End Developer
@@ -31,7 +32,8 @@ const HeroContainer = () => {
                             </p>
                         </div>
 
-                        <div className="mb-5 flex w-full flex-col items-center justify-center md:mb-0 md:w-[50%]">
+                        {/* image */}
+                        <div className="mb-5 flex w-full flex-col items-center justify-center md:mb-0 md:w-[50%] md:items-end lg:items-center">
                             <div className="h-[275px] w-[275px] overflow-hidden rounded-full bg-indigo-500 md:h-[300px] md:w-[300px] lg:h-[350px] lg:w-[350px] xl:h-[400px] xl:w-[400px]">
                                 <img
                                     src={images.personBg}
