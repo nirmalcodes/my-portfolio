@@ -9,12 +9,10 @@ import {
 const Home = () => {
     return (
         <>
-            <div className="">
-                <HeroContainer />
-                <AboutContainer />
-                <ProjectsContainer />
-                <ContactContainer />
-            </div>
+            <HeroContainer />
+            <AboutContainer />
+            <ProjectsContainer />
+            <ContactContainer />
         </>
     )
 }
