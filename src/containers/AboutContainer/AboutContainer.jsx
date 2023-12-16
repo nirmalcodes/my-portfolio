@@ -9,7 +9,7 @@ const AboutContainer = () => {
                     <SlideInAnimation
                         component="h3"
                         className={
-                            'relative mb-7 text-[64px] font-bold uppercase leading-none text-slate-800 opacity-10 md:absolute md:top-[40%] md:-translate-y-[40%] md:text-[128px] lg:top-[45%] lg:-translate-y-[45%] lg:text-[156px] xl:text-[200px]'
+                            'relative mb-7 text-[64px] font-bold uppercase leading-none text-slate-800 opacity-10 md:absolute md:top-[40%] md:-translate-y-[40%] md:text-[128px] lg:top-[37%] lg:-translate-y-[37%] lg:text-[156px] xl:text-[200px]'
                         }
                     >
                         About Me
