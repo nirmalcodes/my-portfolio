@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { FaGithub, FaLink } from 'react-icons/fa'
+import IconSelector from '../IconSelector/IconSelector'
 
 const ProjectCard = ({ projectData }) => {
     const {
@@ -72,12 +72,14 @@ const ProjectCard = ({ projectData }) => {
                                     to={demoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    aria-label={
-                                        'Demo Link for the Project'
-                                    }
+                                    aria-label={'Demo Link for the Project'}
                                     className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
                                 >
-                                    <FaLink className="mr-2" /> Demo
+                                    <IconSelector
+                                        iconName={'link'}
+                                        className="mr-2"
+                                    />
+                                    Demo
                                 </Link>
                             </li>
                         )}
@@ -92,7 +94,11 @@ const ProjectCard = ({ projectData }) => {
                                     aria-label={'Github Link for the Code'}
                                     className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
                                 >
-                                    <FaGithub className="mr-2" /> Code
+                                    <IconSelector
+                                        iconName={'github'}
+                                        className="mr-2"
+                                    />
+                                    Code
                                 </Link>
                             </li>
                         )}
