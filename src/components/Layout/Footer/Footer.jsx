@@ -1,35 +1,5 @@
 import React from 'react'
-import {
-    FaFacebookF,
-    FaInstagram,
-    FaXTwitter,
-    FaLinkedinIn,
-    FaYoutube,
-    FaDribbble,
-    FaBehance,
-    FaLink,
-} from 'react-icons/fa6'
-
-const iconFinder = (iconName) => {
-    switch (iconName) {
-        case 'facebook':
-            return <FaFacebookF />
-        case 'instagram':
-            return <FaInstagram />
-        case 'twitter':
-            return <FaXTwitter />
-        case 'linkedin':
-            return <FaLinkedinIn />
-        case 'youtube':
-            return <FaYoutube />
-        case 'dribbble':
-            return <FaDribbble />
-        case 'behance':
-            return <FaBehance />
-        default:
-            return <FaLink />
-    }
-}
+import IconSelector from '../../IconSelector/IconSelector'
 
 const Footer = ({ name, socials }) => {
     const DateYear = new Date().getFullYear()
@@ -50,7 +20,7 @@ const Footer = ({ name, socials }) => {
                                     rel="noopener noreferrer"
                                     className="flex h-7 w-7 items-center justify-center rounded bg-slate-500 text-xl text-slate-800"
                                 >
-                                    {iconFinder(social.name)}
+                                    <IconSelector iconName={social.name} />
                                 </a>
                             </li>
                         ))}
