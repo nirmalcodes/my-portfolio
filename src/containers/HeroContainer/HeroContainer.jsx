@@ -40,6 +40,7 @@ const HeroContainer = () => {
                                     alt="Nirmal Fernando"
                                     loading="lazy"
                                     width={400}
+                                    height={400}
                                     className="h-auto w-full object-cover"
                                 />
                             </div>
@@ -65,6 +66,8 @@ const HeroContainer = () => {
                                             src={`https://skillicons.dev/icons?i=${tech}`}
                                             alt={tech}
                                             loading="lazy"
+                                            width={48}
+                                            height={48}
                                         />
                                     </li>
                                 ))}
