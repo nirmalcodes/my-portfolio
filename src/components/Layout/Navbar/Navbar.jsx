@@ -7,7 +7,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
     const navbarRef = useRef(null)
     const [isToggled, setIsToggled] = useState(false)
     const [activeLink, setActiveLink] = useState('hero')
-    const [isScrolled, setIsScrolled] = useState(false)
+    const [isScrolled] = useState(false)
 
     // function to scroll to the section
     const scrollToSection = (sectionId) => {
@@ -67,7 +67,12 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                 className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-800 shadow-md transition-all duration-300 ease-in lg:px-8"
                 ref={navbarRef}
             >
-                <div className="text-xl font-semibold">
+                <div
+                    className="cursor-pointer text-xl font-semibold"
+                    onClick={() => {
+                        scrollToSection(links[0].id)
+                    }}
+                >
                     {logoUrl && (
                         <img src={logoUrl} alt={brandName} loading="eager" />
                     )}
