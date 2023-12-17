@@ -1,40 +1,6 @@
 import React from 'react'
-import {
-    FaEnvelope,
-    FaFacebookF,
-    FaInstagram,
-    FaXTwitter,
-    FaLinkedinIn,
-    FaYoutube,
-    FaDribbble,
-    FaBehance,
-    FaLink,
-} from 'react-icons/fa6'
 import { Link } from 'react-router-dom'
-import { SlideInAnimation } from '../../components'
-
-const iconFinder = (iconName) => {
-    switch (iconName) {
-        case 'email':
-            return <FaEnvelope />
-        case 'facebook':
-            return <FaFacebookF />
-        case 'instagram':
-            return <FaInstagram />
-        case 'twitter':
-            return <FaXTwitter />
-        case 'linkedin':
-            return <FaLinkedinIn />
-        case 'youtube':
-            return <FaYoutube />
-        case 'dribbble':
-            return <FaDribbble />
-        case 'behance':
-            return <FaBehance />
-        default:
-            return <FaLink />
-    }
-}
+import { IconSelector, SlideInAnimation } from '../../components'
 
 const contacts = [
     {
@@ -85,7 +51,9 @@ const ContactContainer = () => {
                                                 to={contact.url}
                                                 aria-label={contact.name}
                                             >
-                                                {iconFinder(contact.name)}
+                                                <IconSelector
+                                                    iconName={contact.name}
+                                                />
                                             </Link>
                                         </li>
                                     )
@@ -102,7 +70,9 @@ const ContactContainer = () => {
                                                 rel="noopener noreferrer"
                                                 aria-label={contact.name}
                                             >
-                                                {iconFinder(contact.name)}
+                                                <IconSelector
+                                                    iconName={contact.name}
+                                                />
                                             </Link>
                                         </li>
                                     )
