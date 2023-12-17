@@ -44,7 +44,7 @@ const ContactContainer = () => {
                                 if (contact.type == 'normal') {
                                     return (
                                         <li
-                                            className="transition-all duration-300 ease-in-out hover:-rotate-6"
+                                            className="transition-all duration-300 ease-in hover:-rotate-6 hover:text-indigo-700"
                                             key={contact.name}
                                         >
                                             <Link
@@ -61,7 +61,7 @@ const ContactContainer = () => {
                                 if (contact.type == 'new') {
                                     return (
                                         <li
-                                            className="transition-all duration-300 ease-in-out hover:-rotate-6"
+                                            className="transition-all duration-300 ease-in hover:-rotate-6 hover:text-indigo-700"
                                             key={contact.name}
                                         >
                                             <Link
