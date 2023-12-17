@@ -64,7 +64,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
     return (
         <>
             <header
-                className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-800 shadow-md transition-all duration-300 ease-in-out lg:px-8"
+                className="fixed inset-x-0 top-0 z-[9999] flex h-14 items-center bg-white px-4 py-2 text-slate-800 shadow-md transition-all duration-300 ease-in lg:px-8"
                 ref={navbarRef}
             >
                 <div className="text-xl font-semibold">
@@ -76,12 +76,12 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                 <button
                     type="button"
                     onClick={handleToggle}
-                    className="z-[99999] ml-auto flex items-center justify-center rounded-full p-2 transition-all duration-300 ease-in-out lg:hidden"
+                    className="z-[99999] ml-auto flex items-center justify-center rounded-full p-2 transition-all duration-300 ease-in lg:hidden"
                 >
                     {isToggled ? <FaX /> : <FaBars />}
                 </button>
                 <nav
-                    className={`fixed inset-0 z-[9999] ml-auto flex h-screen w-full items-center justify-center bg-white p-4 shadow-md backdrop-blur-lg transition-all duration-300 ease-in-out lg:relative lg:inset-auto lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent lg:p-0 lg:shadow-none${
+                    className={`fixed inset-0 z-[9999] ml-auto flex h-screen w-full items-center justify-center bg-white p-4 shadow-md backdrop-blur-lg transition-all duration-300 ease-in lg:relative lg:inset-auto lg:h-auto lg:w-auto lg:translate-x-0 lg:bg-transparent lg:p-0 lg:shadow-none${
                         isToggled ? ' translate-x-0' : ' translate-x-full'
                     }`}
                 >
