@@ -55,6 +55,7 @@ const ProjectCard = ({ projectData }) => {
                                         alt={tech}
                                         loading="lazy"
                                         width={32}
+                                        height={32}
                                         className="transition-all duration-300 ease-in"
                                     />
                                 </li>
@@ -71,6 +72,9 @@ const ProjectCard = ({ projectData }) => {
                                     to={demoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={
+                                        'Demo Link for the Project'
+                                    }
                                     className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
                                 >
                                     <FaLink className="mr-2" /> Demo
@@ -85,6 +89,7 @@ const ProjectCard = ({ projectData }) => {
                                     to={githubLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
+                                    aria-label={'Github Link for the Code'}
                                     className="flex cursor-pointer items-center rounded-md bg-white px-4 py-2 text-slate-800 shadow-md duration-300 ease-in hover:scale-110"
                                 >
                                     <FaGithub className="mr-2" /> Code
