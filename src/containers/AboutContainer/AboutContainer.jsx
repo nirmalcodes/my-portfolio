@@ -9,12 +9,12 @@ const AboutContainer = () => {
                     <SlideInAnimation
                         component="h3"
                         className={
-                            'relative mb-7 text-[64px] font-bold uppercase leading-none text-slate-800 opacity-10 md:absolute md:top-[40%] md:-translate-y-[40%] md:text-[128px] lg:top-[37%] lg:-translate-y-[37%] lg:text-[156px] xl:text-[200px]'
+                            'relative mb-7 text-[64px] font-bold uppercase leading-none text-slate-800 opacity-10 md:absolute md:top-[40%] md:-translate-y-[40%] md:text-[128px] lg:top-[37%] lg:-translate-y-[37%] lg:text-[156px] xl:top-[50%]  xl:-translate-y-[50%] xl:text-[200px]'
                         }
                     >
                         About Me
                     </SlideInAnimation>
-                    <p className="text-2xl text-slate-800 md:absolute md:left-[15%] md:top-[55%] md:-translate-y-[55%] lg:top-[65%] lg:-translate-y-[65%] lg:text-[38px] lg:leading-[42px]">
+                    <p className="text-2xl text-slate-800 md:absolute md:left-[15%] md:top-[55%] md:-translate-y-[55%] lg:top-[65%] lg:-translate-y-[65%] lg:text-[38px] lg:leading-[42px] xl:top-[70%] xl:-translate-y-[70%]">
                         Turning designs into interactive wonders. Crafting
                         clean, optimized, and reusable code is my forte. And a
                         rapid learner passionate about delivering seamless user
