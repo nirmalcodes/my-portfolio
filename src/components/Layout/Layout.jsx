@@ -1,6 +1,7 @@
 import React from 'react'
 import Navbar from './Navbar/Navbar'
 import Footer from './Footer/Footer'
+import ScrollToTopButton from './ScrollToTopButton/ScrollToTopButton'
 
 const sections = [
     {
@@ -44,6 +45,7 @@ const Layout = ({ children }) => {
         <>
             <Navbar brandName={'Nirmal'} links={sections} />
             <div className="flex flex-1 flex-col">{children}</div>
+            <ScrollToTopButton />
             {/* <Footer socials={socials} /> */}
         </>
     )
