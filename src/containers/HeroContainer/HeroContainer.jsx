@@ -48,7 +48,7 @@ const HeroContainer = () => {
                             <ul className="mx-auto flex items-center gap-4 sm:mx-0">
                                 {contacts.map((contact) => (
                                     <li
-                                        className="text-4xl text-slate-800 transition-all duration-300 ease-in-out hover:scale-110 hover:text-indigo-700"
+                                        className="text-4xl text-slate-800 transition-all duration-300 ease-in hover:scale-110 hover:text-indigo-700"
                                         key={contact.name}
                                     >
                                         <Link
