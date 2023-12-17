@@ -33,13 +33,13 @@ const projects = [
         githubLink: 'https://www.google.com/',
     },
 ]
-
+// 4f46e5
 const ProjectsContainer = () => {
     return (
         <>
             <section className="section" id={'projects'}>
                 <div className="container min-h-screen bg-red-200/0 py-20">
-                    <h5 className="mb-6 text-lg font-bold text-indigo-500">
+                    <h5 className="mb-6 text-lg font-bold text-indigo-700">
                         PORTFOLIO
                     </h5>
 
