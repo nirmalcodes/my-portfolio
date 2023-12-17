@@ -1,5 +1,7 @@
 import React from 'react'
 import { images } from '../../utils/constants'
+import { Link } from 'react-router-dom'
+import { IconSelector } from '../../components'
 
 const techStack = [
     'html',
@@ -10,6 +12,19 @@ const techStack = [
     'tailwind',
     'bootstrap',
     'mui',
+]
+
+const contacts = [
+    {
+        name: 'github',
+        url: 'https://www.github.com/',
+        type: 'new',
+    },
+    {
+        name: 'linkedin',
+        url: 'https://www.linkedin.com/',
+        type: 'new',
+    },
 ]
 
 const HeroContainer = () => {
@@ -26,10 +41,29 @@ const HeroContainer = () => {
                             <h3 className="mb-4 text-center text-[64px] font-bold leading-none md:text-left md:text-6xl">
                                 Front-End Developer
                             </h3>
-                            <p className="text-center text-xl font-medium text-slate-600 md:text-left">
+                            <p className="mb-8 text-center text-xl font-medium text-slate-600 md:text-left">
                                 Hi, I'm Nirmal Fernando. A passionate Front-End
                                 Developer based in Panadura, Sri Lanka.
                             </p>
+                            <ul className="mx-auto flex items-center gap-4 sm:mx-0">
+                                {contacts.map((contact) => (
+                                    <li
+                                        className="text-4xl text-slate-800 transition-all duration-300 ease-in-out hover:scale-110 hover:text-indigo-700"
+                                        key={contact.name}
+                                    >
+                                        <Link
+                                            to={contact.url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            aria-label={contact.name}
+                                        >
+                                            <IconSelector
+                                                iconName={contact.name}
+                                            />
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
                         </div>
 
                         {/* image */}
