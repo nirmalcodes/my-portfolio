@@ -99,6 +99,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                                     className={`nav-link ${
                                         activeLink === link.id ? 'active' : null
                                     }`}
+                                    aria-label={link.name}
                                 >
                                     {link?.name}
                                 </Link>
