@@ -81,7 +81,10 @@ const ContactContainer = () => {
                                             className="transition-all duration-300 ease-in-out hover:-rotate-6"
                                             key={contact.name}
                                         >
-                                            <Link to={contact.url}>
+                                            <Link
+                                                to={contact.url}
+                                                aria-label={contact.name}
+                                            >
                                                 {iconFinder(contact.name)}
                                             </Link>
                                         </li>
@@ -97,6 +100,7 @@ const ContactContainer = () => {
                                                 to={contact.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
+                                                aria-label={contact.name}
                                             >
                                                 {iconFinder(contact.name)}
                                             </Link>
