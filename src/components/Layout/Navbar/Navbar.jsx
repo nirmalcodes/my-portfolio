@@ -76,6 +76,7 @@ const Navbar = ({ logoUrl, logoOnly = false, brandName, links }) => {
                 <button
                     type="button"
                     onClick={handleToggle}
+                    aria-label="Toggle Sidebar Menu"
                     className="z-[99999] ml-auto flex items-center justify-center rounded-full p-2 transition-all duration-300 ease-in lg:hidden"
                 >
                     {isToggled ? <FaX /> : <FaBars />}
