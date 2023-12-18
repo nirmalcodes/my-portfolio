@@ -72,7 +72,7 @@ const HeroContainer = () => {
                                 <img
                                     src={images.personBg}
                                     alt="Nirmal Fernando"
-                                    loading="lazy"
+                                    loading="eager"
                                     width={400}
                                     height={400}
                                     className="h-auto w-full object-cover"
