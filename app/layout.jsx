@@ -2,6 +2,7 @@ import { Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/shared/Navbar';
 import STTButton from '@/components/STTButton';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <Navbar />
         {children}
         <STTButton />
+        <SpeedInsights />
       </body>
     </html>
   );
