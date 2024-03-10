@@ -3,6 +3,7 @@ import './globals.css';
 import Navbar from '@/components/shared/Navbar';
 import STTButton from '@/components/STTButton';
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from "@vercel/analytics/react"
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -19,6 +20,7 @@ export default function RootLayout({ children }) {
         {children}
         <STTButton />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
