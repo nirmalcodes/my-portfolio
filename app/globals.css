@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-color: #0a0a0a;
+}
+
+*,
+*::before,
+*::after {
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('./clear_pattern.svg');
+  background-attachment: fixed;
+  background-size: cover;
+  @apply overflow-x-hidden bg-[#0a0a0a];
+}
+
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 16px;
+  @apply bg-gray-600/80;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-600;
+}
+
+@layer components {
+  /* navbar styles */
+  .navbar {
+    @apply fixed left-0 right-0 top-0 z-[9999] flex p-4 text-white;
+  }
+  .navbar__brand {
+    @apply text-xl font-bold tracking-wide;
+  }
+  .navbar__toggler {
+    @apply fixed right-2 top-4 z-[99999] overflow-hidden rounded-full p-2 md:hidden;
+  }
+  .nav {
+    @apply fixed inset-0 flex translate-x-[1000px] items-center justify-center bg-black/50 backdrop-blur-sm transition-all duration-300 ease-in-out md:relative md:inset-auto md:block md:-translate-x-0 md:items-baseline md:justify-normal md:bg-transparent;
+  }
+  .nav__list {
+    @apply flex flex-col gap-4 md:block;
+  }
+  .nav__item {
+    @apply inline-block md:mr-3;
+  }
+  .nav__link {
+    @apply text-2xl opacity-80 transition-all duration-150 ease-in hover:opacity-100 md:text-lg;
+  }
+  .nav__link.active {
+    @apply font-semibold opacity-100;
+  }
+
+  /* section styles */
+  .section {
+    @apply relative min-h-[100vh] px-4 pb-8 pt-16;
+  }
+
+  /* .container {
+    @apply relative mx-auto w-full md:w-[90%] lg:w-[80%];
+  } */
+
+  /* my picture */
+  .person {
+    @apply relative mx-auto max-w-[18rem] transition-all duration-300 ease-in-out md:mx-0 lg:max-w-[25rem] xl:max-w-[30rem];
+  }
+
+  .person__container {
+    @apply grid aspect-[1_/_1.25] scale-[.95] items-end overflow-hidden rounded-[0_0_100vw_100vw] transition-transform duration-300 ease-in-out hover:scale-[1];
+  }
+
+  .person__circle {
+    @apply absolute inset-x-0 bottom-0 top-auto mx-auto block aspect-square w-[100%] max-w-full rounded-[50%] object-cover;
+  }
+
+  .person__img {
+    @apply relative z-[2] block max-w-full translate-y-5 transition-transform duration-300 ease-in-out hover:translate-y-1;
+  }
+}
