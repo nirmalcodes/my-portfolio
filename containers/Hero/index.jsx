@@ -1,8 +1,65 @@
 import SlideInFromLeft from '@/components/Animations/SlideInFromLeft';
+import StaggeredFromBottom from '@/components/Animations/StaggeredFromBottom';
 import ZoomIn from '@/components/Animations/ZoomIn';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaChevronDown } from 'react-icons/fa6';
+import {
+  FaChevronDown,
+  FaEnvelope,
+  FaLinkedinIn,
+  FaGithub,
+} from 'react-icons/fa6';
+
+const contacts = [
+  {
+    name: 'email',
+    icon: FaEnvelope,
+    url: 'mailto:srnfernando102@gmail.com',
+    type: 'normal',
+  },
+  {
+    name: 'github',
+    icon: FaGithub,
+    url: 'https://github.com/nirmalcodes',
+    type: 'new',
+  },
+  {
+    name: 'linkedin',
+    icon: FaLinkedinIn,
+    url: 'https://www.linkedin.com/in/s-r-n-fernando-5310b4209?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BAqRQIZajQReQM7AKkzxBzw%3D%3D',
+    type: 'new',
+  },
+];
+
+const contactLinks = contacts.map((contact) => {
+  if (contact.type == 'normal') {
+    return (
+      <div className='transition-all duration-300 ease-in hover:-rotate-6 hover:scale-110'>
+        <Link
+          href={contact.url}
+          aria-label={`${contact.name} link`}
+          key={contact.name}
+        >
+          <contact.icon />
+        </Link>
+      </div>
+    );
+  }
+  if (contact.type == 'new') {
+    return (
+      <div className='transition-all duration-300 ease-in hover:-rotate-6 hover:scale-110'>
+        <Link
+          href={contact.url}
+          aria-label={`${contact.name} link`}
+          target='_blank'
+          key={contact.name}
+        >
+          <contact.icon />
+        </Link>
+      </div>
+    );
+  }
+});
 
 export default function Hero() {
   return (
@@ -14,7 +71,7 @@ export default function Hero() {
               <div className='person__container'>
                 <div className='person__circle bg-gradient-to-br from-[#6889ff] to-[#0a0a0a]' />
                 <Image
-                  src='/personBg.png'
+                  src='/me.png'
                   alt='my picture'
                   width={816}
                   height={800}
@@ -34,14 +91,21 @@ export default function Hero() {
               </h1>
             </SlideInFromLeft>
             <SlideInFromLeft delay={0.15} className='overflow-hidden'>
-              <p className='md:text-3xl` text-center text-xl font-semibold tracking-widest opacity-70 transition-all duration-300 ease-in-out sm:text-left sm:text-2xl md:pl-1'>
+              <p className='md:text-3xl` mb-4 text-center text-xl font-semibold tracking-widest opacity-70 transition-all duration-300 ease-in-out sm:text-left sm:text-2xl md:pl-1'>
                 Front-End Developer
               </p>
             </SlideInFromLeft>
+            <div className='flex flex-wrap items-center gap-5 text-2xl md:pl-1'>
+              {contactLinks.map((link, index) => (
+                <StaggeredFromBottom key={index} index={index}>
+                  {link}
+                </StaggeredFromBottom>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-      <ZoomIn duration={0.15} className='relative mx-auto mt-12'>
+      <ZoomIn duration={0.15} className='relative mx-auto mt-10'>
         <Link
           href={'#about'}
           aria-label='scroll to about section link'
