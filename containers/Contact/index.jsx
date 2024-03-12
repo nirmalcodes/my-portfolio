@@ -1,12 +1,7 @@
 import SlideInFromLeft from '@/components/Animations/SlideInFromLeft';
 import StaggeredFromBottom from '@/components/Animations/StaggeredFromBottom';
 import Link from 'next/link';
-import {
-  FaEnvelope,
-  FaInstagram,
-  FaXTwitter,
-  FaLinkedinIn,
-} from 'react-icons/fa6';
+import { FaEnvelope, FaLinkedinIn, FaGithub } from 'react-icons/fa6';
 
 const contacts = [
   {
@@ -16,21 +11,15 @@ const contacts = [
     type: 'normal',
   },
   {
-    name: 'instagram',
-    icon: FaInstagram,
-    url: 'https://www.instagram.com/',
-    type: 'new',
-  },
-  {
-    name: 'twitter',
-    icon: FaXTwitter,
-    url: 'https://www.twitter.com/',
+    name: 'github',
+    icon: FaGithub,
+    url: 'https://github.com/nirmalcodes',
     type: 'new',
   },
   {
     name: 'linkedin',
     icon: FaLinkedinIn,
-    url: 'https://www.linkedin.com/',
+    url: 'https://www.linkedin.com/in/s-r-n-fernando-5310b4209?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BAqRQIZajQReQM7AKkzxBzw%3D%3D',
     type: 'new',
   },
 ];
