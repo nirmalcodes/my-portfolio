@@ -71,7 +71,7 @@ export default function Hero() {
               <div className='person__container'>
                 <div className='person__circle bg-gradient-to-br from-[#6889ff] to-[#0a0a0a]' />
                 <Image
-                  src='/me.png'
+                  src='/me_tiny.png'
                   alt='my picture'
                   width={816}
                   height={800}
@@ -91,17 +91,17 @@ export default function Hero() {
               </h1>
             </SlideInFromLeft>
             <SlideInFromLeft delay={0.15} className='overflow-hidden'>
-              <p className='md:text-3xl` mb-4 text-center text-xl font-semibold tracking-widest opacity-70 transition-all duration-300 ease-in-out sm:text-left sm:text-2xl md:pl-1'>
+              <p className='mb-4 text-center text-xl font-semibold tracking-widest opacity-70 transition-all duration-300 ease-in-out sm:text-left sm:text-2xl md:pl-1 md:text-3xl'>
                 Front-End Developer
               </p>
             </SlideInFromLeft>
-            <div className='flex flex-wrap items-center gap-5 text-2xl md:pl-1'>
-              {contactLinks.map((link, index) => (
-                <StaggeredFromBottom key={index} index={index}>
-                  {link}
-                </StaggeredFromBottom>
-              ))}
-            </div>
+            <SlideInFromLeft delay={0.2} className='overflow-hidden'>
+              <div className='flex flex-wrap items-center gap-5 text-2xl md:pl-1'>
+                {contactLinks.map((link, index) => (
+                  <div key={index}>{link}</div>
+                ))}
+              </div>
+            </SlideInFromLeft>
           </div>
         </div>
       </div>
