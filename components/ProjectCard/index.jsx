@@ -18,7 +18,7 @@ export default function ProjectCard({ project }) {
             fill
             quality={100}
             style={{
-              objectFit: 'cover',
+              objectFit: 'fill',
               objectPosition: 'center',
             }}
             loading='lazy'
@@ -28,18 +28,21 @@ export default function ProjectCard({ project }) {
 
         {/* details side */}
         <div className='w-full flex-shrink-0 rounded-lg bg-green-600/0 p-1 md:flex-1'>
-          <p className='text-xl font-semibold'>{name ?? 'Project Name'}</p>
-          <span className='mb-4 inline-block text-sm font-medium opacity-75'>
+          <p className='mb-4 text-xl font-semibold'>{name ?? 'Project Name'}</p>
+          {/* <span className='mb-4 inline-block text-sm font-medium opacity-75'>
             {date ?? 'Date'}
-          </span>
+          </span> */}
           <div className='mb-3 max-w-lg'>
             {description ?? 'Project Description'}
           </div>
           {techs && (
             <ul className='flex flex-wrap items-center gap-2'>
               {techs.map((tech, index) => (
-                <li key={index}>
-                  <Image
+                <li
+                  key={index}
+                  className='rounded-md bg-white/10 px-3 text-sm py-[0.375rem]'
+                >
+                  {/* <Image
                     src={`https://skillicons.dev/icons?i=${tech}`}
                     alt={tech}
                     width={32}
@@ -47,31 +50,36 @@ export default function ProjectCard({ project }) {
                     priority={false}
                     unoptimized
                     loading='lazy'
-                  />
+                  /> */}
+                  {tech}
                 </li>
               ))}
             </ul>
           )}
 
           <div className='mt-7 flex gap-4 bg-red-400/0'>
-            <Link
-              href={demoURL ?? ''}
-              target='_blank'
-              aria-label='See live demo'
-              className='flex flex-1 items-center justify-center rounded-md bg-white/25 px-4 py-2 text-sm backdrop-blur-sm transition-all duration-200 ease-in hover:scale-105 hover:bg-white/30 md:w-fit md:flex-none md:text-base'
-            >
-              <FaLink className='mr-1' />
-              Demo
-            </Link>
-            <Link
-              href={githubURL ?? ''}
-              target='_blank'
-              aria-label='See github code of this project'
-              className='flex flex-1 items-center justify-center rounded-md bg-white/25 px-4 py-2 text-sm backdrop-blur-sm transition-all duration-200 ease-in hover:scale-105 hover:bg-white/30 md:w-fit md:flex-none md:text-base'
-            >
-              <FaGithub className='mr-1' />
-              Code
-            </Link>
+            {demoURL && (
+              <Link
+                href={demoURL ?? ''}
+                target='_blank'
+                aria-label='See live demo'
+                className='flex flex-1 items-center justify-center rounded-md bg-white/25 px-4 py-2 text-sm backdrop-blur-sm transition-all duration-200 ease-in hover:scale-105 hover:bg-white/30 md:w-fit md:flex-none md:text-base'
+              >
+                <FaLink className='mr-1' />
+                Demo
+              </Link>
+            )}
+            {githubURL && (
+              <Link
+                href={githubURL ?? ''}
+                target='_blank'
+                aria-label='See github code of this project'
+                className='flex flex-1 items-center justify-center rounded-md bg-white/25 px-4 py-2 text-sm backdrop-blur-sm transition-all duration-200 ease-in hover:scale-105 hover:bg-white/30 md:w-fit md:flex-none md:text-base'
+              >
+                <FaGithub className='mr-1' />
+                Code
+              </Link>
+            )}
           </div>
         </div>
       </div>
