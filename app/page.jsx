@@ -5,7 +5,7 @@ import Portfolio from '@/containers/Portfolio';
 
 export default function Home() {
   return (
-    <main>
+    <main className='relative'>
       <Hero />
       <About />
       <Portfolio />
