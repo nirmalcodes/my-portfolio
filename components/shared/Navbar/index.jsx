@@ -18,7 +18,24 @@ export default function Navbar() {
   const pathname = usePathname();
   const navbarRef = useRef(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   useEffect(() => {
     const sections = document.querySelectorAll('section[id]');
@@ -75,7 +92,10 @@ export default function Navbar() {
 
   return (
     <>
-      <header className='navbar' ref={navbarRef}>
+      <header
+        ref={navbarRef}
+        className={`navbar ${isScrolled ? 'scrolled' : ''}`}
+      >
         <Link
           href={'/'}
           className='navbar__brand'
