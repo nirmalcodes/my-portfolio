@@ -8,9 +8,9 @@ import { usePathname } from 'next/navigation';
 // import { useRouter } from 'next/navigation';
 
 const navLinks = [
-  { id: 1, name: 'About', path: '#about' },
-  { id: 2, name: 'Portfolio', path: '#portfolio' },
-  { id: 3, name: 'Contact', path: '#contact' },
+  { id: 1, name: 'About', path: '/#about' },
+  { id: 2, name: 'Portfolio', path: '/#portfolio' },
+  { id: 3, name: 'Contact', path: '/#contact' },
 ];
 
 export default function Navbar() {
